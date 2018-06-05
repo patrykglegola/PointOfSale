@@ -26,7 +26,7 @@ public class ProductRepositoryInMemory implements ProductRepository {
     }
 
     private void addNewProduct(String name, String barCodeValue, double price) {
-        products.add(new Product(nextId(),name, new BarCode(barCodeValue), new BigDecimal(String.valueOf(price))));
+        products.add(new Product(nextId(), name, new BarCode(barCodeValue), new BigDecimal(String.valueOf(price))));
     }
 
     private Long nextId() {

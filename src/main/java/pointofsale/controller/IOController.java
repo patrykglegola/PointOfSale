@@ -2,7 +2,7 @@ package pointofsale.controller;
 
 import pointofsale.exception.InvalidBarCodeException;
 import pointofsale.input.BarCodeScanner;
-import pointofsale.input.ConsoleBarCodeScanner;
+import pointofsale.input.BarCodeScannerImpl;
 import pointofsale.model.BarCode;
 import pointofsale.model.Product;
 import pointofsale.model.ReceiptData;
@@ -22,9 +22,8 @@ public class IOController {
     public IOController() {
         this.printer = new ConsoleReceiptPrinter();
         this.lcdDisplay = new ConsoleLCDDisplay();
-        this.barCodeScanner = new ConsoleBarCodeScanner();
+        this.barCodeScanner = new BarCodeScannerImpl();
         this.consoleInput = new Scanner(System.in);
-
     }
 
     public void printReceipt(ReceiptData receiptData) {
